@@ -64,10 +64,10 @@ const steps = [
     title: 'Ressources',
     subtitle: 'Gestion et importation des ressources'
   },
-  {
-    title: 'Stakeholders',
-    subtitle: 'Liste des personnes ayant des interets dans le projet'
-  },
+  // {
+  //   title: 'Stakeholders',
+  //   subtitle: 'Liste des personnes ayant des interets dans le projet'
+  // },
   {
     title: 'Time Management',
     subtitle: 'Planification (phases, taches, activités)'
@@ -236,7 +236,7 @@ const StepperAlternativeLabel = () => {
                   </Grid>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={handleDialogClose} color='secondary'>
+                  <Button onClick={handleDialogClose} color='primary'>
                     Annuler
                   </Button>
                   <Button variant='contained' color='primary' onClick={handleDialogClose}>
@@ -302,7 +302,7 @@ const StepperAlternativeLabel = () => {
                   </Grid>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={handleDialogClose} color='secondary'>
+                  <Button onClick={handleDialogClose} color='primary'>
                     Annuler
                   </Button>
                   <Button variant='contained' color='primary' onClick={handleDialogClose}>
@@ -368,7 +368,7 @@ const StepperAlternativeLabel = () => {
                   </Grid>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={handleDialogClose} color='secondary'>
+                  <Button onClick={handleDialogClose} color='primary'>
                     Annuler
                   </Button>
                   <Button variant='contained' color='primary' onClick={handleDialogClose}>
@@ -376,6 +376,142 @@ const StepperAlternativeLabel = () => {
                   </Button>
                 </DialogActions>
               </Dialog>
+            </Grid>
+          </Fragment>
+        )
+      // case 3:
+      //   return (
+      //     <Fragment>
+      //       <Grid item xs={12} sx={{ mt: 10, textAlign: 'center' }}>
+      //         <Card>
+      //           <CardHeader title='Stakeholder' />
+      //           <StakeholdersTable />
+      //         </Card>
+      //         <Button variant='contained' color='primary' sx={{ mt: 10 }} onClick={handleDialogOpen}>
+      //           Ajouter un Stakeholder
+      //         </Button>
+
+      //         <Dialog open={openDialog} onClose={handleDialogClose}>
+      //           <DialogTitle sx={{ mt: 2, mb: 2 }}>Ajouter un livrable</DialogTitle>
+      //           <DialogContent>
+      //             <Grid container spacing={11}>
+      //               <Grid item xs={12}>
+      //                 <TextField fullWidth label='Nom livrable' />
+      //               </Grid>
+      //               <Grid item xs={12}>
+      //                 <FormControl fullWidth>
+      //                   <InputLabel>Rapport</InputLabel>
+      //                   <Select defaultValue='Rapport'>
+      //                     <MenuItem value='Rapport 1'>Rapport 1</MenuItem>
+      //                     <MenuItem value='Rapport 2'>Rapport 2</MenuItem>
+      //                     <MenuItem value='Rapport 3'>Rapport 3</MenuItem>
+      //                   </Select>
+      //                 </FormControl>
+      //               </Grid>
+      //               <Grid item xs={12}>
+      //                 <TextField
+      //                   fullWidth
+      //                   multiline
+      //                   rows={4}
+      //                   label='Description'
+      //                   value={email}
+      //                   placeholder='Description'
+      //                   onChange={e => setEmail(e.target.value)}
+      //                 />{' '}
+      //               </Grid>
+      //               <Grid item xs={12}>
+      //                 <FormControl fullWidth>
+      //                   <InputLabel>Responsable</InputLabel>
+      //                   <Select defaultValue='Haute'>
+      //                     <MenuItem value='Personne 1'>Personne 1</MenuItem>
+      //                     <MenuItem value='Personne 2'>Personne 2</MenuItem>
+      //                     <MenuItem value='Personne 3'>Personne 3</MenuItem>
+      //                     <MenuItem value='Personne 4'>Personne 4</MenuItem>
+      //                     <MenuItem value='Personne 5'>Personne 5</MenuItem>
+      //                   </Select>
+      //                 </FormControl>
+      //               </Grid>
+      //             </Grid>
+      //           </DialogContent>
+      //           <DialogActions>
+      //             <Button onClick={handleDialogClose} color='primary'>
+      //               Annuler
+      //             </Button>
+      //             <Button variant='contained' color='primary' onClick={handleDialogClose}>
+      //               Créer
+      //             </Button>
+      //           </DialogActions>
+      //         </Dialog>
+      //       </Grid>
+      //     </Fragment>
+      //   )
+      case 3:
+        return (
+          <Fragment>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label='Nom de la Tâche'
+                value={email}
+                placeholder='Définir sommaire du projet'
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                multiline
+                rows={2}
+                label='Description :'
+                value={username}
+                placeholder='Description de la tâche...'
+                onChange={e => setUsername(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                type='date'
+                value={email}
+                placeholder='Date de début Planifiée'
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Grid>{' '}
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                type='date'
+                value={email}
+                placeholder='Date de Fin Planifiée'
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label='Durée (jours)'
+                value={email}
+                placeholder='Durée en jours .;'
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label='Budget planifié'
+                value={email}
+                placeholder='Budget prévu..'
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label='Effort Estimé (jours)'
+                value={email}
+                placeholder='Effort en jours...'
+                onChange={e => setEmail(e.target.value)}
+              />
             </Grid>
             <Grid item xs={12} sx={{ mt: 10, textAlign: 'center' }}>
               <Card>
@@ -501,203 +637,6 @@ const StepperAlternativeLabel = () => {
             </Grid>
           </Fragment>
         )
-      case 3:
-        return (
-          <Fragment>
-            <Grid item xs={12} sx={{ mt: 10, textAlign: 'center' }}>
-              <Card>
-                <CardHeader title='Stakeholder' />
-                <StakeholdersTable />
-              </Card>
-              <Button variant='contained' color='primary' sx={{ mt: 10 }} onClick={handleDialogOpen}>
-                Ajouter un Stakeholder
-              </Button>
-
-              <Dialog open={openDialog} onClose={handleDialogClose}>
-                <DialogTitle sx={{ mt: 2, mb: 2 }}>Ajouter un livrable</DialogTitle>
-                <DialogContent>
-                  <Grid container spacing={11}>
-                    <Grid item xs={12}>
-                      <TextField fullWidth label='Nom livrable' />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <FormControl fullWidth>
-                        <InputLabel>Rapport</InputLabel>
-                        <Select defaultValue='Rapport'>
-                          <MenuItem value='Rapport 1'>Rapport 1</MenuItem>
-                          <MenuItem value='Rapport 2'>Rapport 2</MenuItem>
-                          <MenuItem value='Rapport 3'>Rapport 3</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        multiline
-                        rows={4}
-                        label='Description'
-                        value={email}
-                        placeholder='Description'
-                        onChange={e => setEmail(e.target.value)}
-                      />{' '}
-                    </Grid>
-                    <Grid item xs={12}>
-                      <FormControl fullWidth>
-                        <InputLabel>Responsable</InputLabel>
-                        <Select defaultValue='Haute'>
-                          <MenuItem value='Personne 1'>Personne 1</MenuItem>
-                          <MenuItem value='Personne 2'>Personne 2</MenuItem>
-                          <MenuItem value='Personne 3'>Personne 3</MenuItem>
-                          <MenuItem value='Personne 4'>Personne 4</MenuItem>
-                          <MenuItem value='Personne 5'>Personne 5</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                  </Grid>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleDialogClose} color='secondary'>
-                    Annuler
-                  </Button>
-                  <Button variant='contained' color='primary' onClick={handleDialogClose}>
-                    Créer
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </Grid>
-          </Fragment>
-        )
-      case 4:
-        return (
-          <Fragment>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label='Nom de la Tâche'
-                value={email}
-                placeholder='Définir sommaire du projet'
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                multiline
-                rows={2}
-                label='Description :'
-                value={username}
-                placeholder='Description de la tâche...'
-                onChange={e => setUsername(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                type='date'
-                value={email}
-                placeholder='Date de début Planifiée'
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Grid>{' '}
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                type='date'
-                value={email}
-                placeholder='Date de Fin Planifiée'
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label='Durée (jours)'
-                value={email}
-                placeholder='Durée en jours .;'
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label='Budget planifié'
-                value={email}
-                placeholder='Budget prévu..'
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label='Effort Estimé (jours)'
-                value={email}
-                placeholder='Effort en jours...'
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12} sx={{ mt: 10, textAlign: 'center' }}>
-              <Card>
-                <CardHeader title='Ressources Associées' />
-                <RH />
-              </Card>
-              <Button variant='contained' color='primary' sx={{ mt: 10 }} onClick={handleDialogOpen}>
-                Ajouter un Ressource Associée
-              </Button>
-
-              <Dialog open={openDialog} onClose={handleDialogClose}>
-                <DialogTitle sx={{ mt: 2, mb: 2 }}>Ajouter un livrable</DialogTitle>
-                <DialogContent>
-                  <Grid container spacing={11}>
-                    <Grid item xs={12}>
-                      <TextField fullWidth label='Nom livrable' />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <FormControl fullWidth>
-                        <InputLabel>Rapport</InputLabel>
-                        <Select defaultValue='Rapport'>
-                          <MenuItem value='Rapport 1'>Rapport 1</MenuItem>
-                          <MenuItem value='Rapport 2'>Rapport 2</MenuItem>
-                          <MenuItem value='Rapport 3'>Rapport 3</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        fullWidth
-                        multiline
-                        rows={4}
-                        label='Description'
-                        value={email}
-                        placeholder='Description'
-                        onChange={e => setEmail(e.target.value)}
-                      />{' '}
-                    </Grid>
-                    <Grid item xs={12}>
-                      <FormControl fullWidth>
-                        <InputLabel>Responsable</InputLabel>
-                        <Select defaultValue='Haute'>
-                          <MenuItem value='Personne 1'>Personne 1</MenuItem>
-                          <MenuItem value='Personne 2'>Personne 2</MenuItem>
-                          <MenuItem value='Personne 3'>Personne 3</MenuItem>
-                          <MenuItem value='Personne 4'>Personne 4</MenuItem>
-                          <MenuItem value='Personne 5'>Personne 5</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                  </Grid>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleDialogClose} color='secondary'>
-                    Annuler
-                  </Button>
-                  <Button variant='contained' color='primary' onClick={handleDialogClose}>
-                    Créer
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </Grid>
-          </Fragment>
-        )
 
       default:
         return 'Unknown Step'
@@ -733,7 +672,7 @@ const StepperAlternativeLabel = () => {
               <Button
                 size='large'
                 variant='outlined'
-                color='secondary'
+                color='primary'
                 disabled={activeStep === 0}
                 onClick={handleBack}
               >

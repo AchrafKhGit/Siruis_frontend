@@ -13,7 +13,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 interface Column {
-  id: 'select' | 'name' | 'email' | 'role' | 'rate';
+  id: 'select' | 'name' | 'email' | 'role' | 'experience' |'rate' | 'vente';
   label: string;
   minWidth?: number;
   align?: 'right' | 'left' | 'center';
@@ -24,7 +24,10 @@ const columns: readonly Column[] = [
   { id: 'name', label: 'Nom de l\'Utilisateur', minWidth: 170, align: 'left' },
   { id: 'email', label: 'Email', minWidth: 170, align: 'left' },
   { id: 'role', label: 'Rôle Actuel', minWidth: 170, align: 'left' },
-  { id: 'rate', label: 'Taux d\'Implication', minWidth: 100, align: 'left' }
+  { id: 'experience', label: 'Hypothèse Expérience dans le poste', minWidth: 170, align: 'left' },
+  { id: 'rate', label: 'Hypothèse Prix Coûtant', minWidth: 100, align: 'left' },
+  { id: 'vente', label: 'Hypothèse Prix de Vente', minWidth: 100, align: 'left' }
+
 ];
 
 interface Data {
@@ -32,7 +35,10 @@ interface Data {
   name: string;
   email: string;
   role: string;
+  experience: string;
   rate: string;
+  vente: string;
+
 }
 
 function createData(
@@ -40,15 +46,18 @@ function createData(
   name: string,
   email: string,
   role: string,
-  rate: string
+  experience: string,
+  rate: string,
+  vente: string
+
 ): Data {
-  return { select, name, email, role, rate };
+  return { select, name, email, role,experience, rate, vente };
 }
 
 const rows = [
-  createData(false, 'Benoit Godbout', 'benoit@example.com', 'Chef de Projet', '40%'),
-  createData(false, 'Alice Tremblay', 'alice@example.com', 'Développeur', '60%'),
-  createData(false, 'Marc Dupont', 'marc@example.com', 'Consultant', '75%')
+  createData(false, 'Benoit Godbout', 'benoit@example.com', 'Chef de Projet', 'Juniore', '50$/h', '100$/h'),
+  createData(false, 'Alice Tremblay', 'alice@example.com', 'Développeur', 'Confirmé', '60$/h', '120$/h'),
+  createData(false, 'Marc Dupont', 'marc@example.com', 'Consultant', 'Juniore' , '70$/h', '140$/h'),
 ];
 
 const TableStickyHeader = () => {

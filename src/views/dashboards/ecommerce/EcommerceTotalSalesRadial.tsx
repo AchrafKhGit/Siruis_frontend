@@ -23,7 +23,11 @@ import RadioGroup from '@mui/material/RadioGroup'
 import { Radio } from '@mui/material'
 
 
+import { useTheme } from '@mui/material/styles';
+
 const EcommerceTotalSalesRadial = ({ percentage }) => {
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
 
   const [openEdit, setOpenEdit] = useState(false); 
 
@@ -40,31 +44,31 @@ const EcommerceTotalSalesRadial = ({ percentage }) => {
         hollow: { size: '60%' }, 
         dataLabels: {
           name: {
-            fontSize: '16px',
-            color: undefined,
+            fontSize: '18px',
+            color: isDarkMode ? '#FFFFFF' : undefined, // Dynamic color based on theme
             offsetY: -10
           },
           value: {
-            fontSize: '14px',
-            color: undefined,
-            offsetY: 16
+            fontSize: '20px',  // Increased font size for better visibility
+            color: isDarkMode ? '#FFFFFF' : undefined, // Dynamic color based on theme
+            offsetY: 5  // Adjusted offset to center the percentage better
           },
           total: {
             show: true,
             label: 'Total',
-            formatter: () => `${percentage}%`
+            color: isDarkMode ? '#FFFFFF' : undefined, // Dynamic color based on theme
+            formatter: () => `${percentage}%`  // Display only the percentage
           }
         }
       }
     },
     fill: {
       type: 'solid',
-      colors: ['#8ABFA3'] // Replace this with your desired blue color, e.g., '#0000FF'
+      colors: ['#8ABFA3']  // Customize this color based on your preferences
     },
     
     labels: ['Progress']
   };
-
   return (
     <Grid container spacing={2} alignItems="center" justifyContent="center">
       <Grid item>

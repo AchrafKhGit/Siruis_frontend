@@ -53,7 +53,7 @@ const data: UsersType = {
   avatar: '/images/avatars/4.png'
 }
 
-const Home = () => {
+const Hypotheses = () => {
   const [openDialog, setOpenDialog] = useState(false)
   // Dialog open/close handlers
   const handleDialogOpen = () => setOpenDialog(true)
@@ -123,4 +123,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Hypotheses

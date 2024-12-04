@@ -8,7 +8,7 @@ import StepperVerticalWithNumbers from 'src/views/forms/form-wizard/StepperVerti
 import StepperLinearWithValidation from 'src/views/forms/form-wizard/StepperLinearWithValidation'
 import StepperVerticalWithoutNumbers from 'src/views/forms/form-wizard/StepperVerticalWithoutNumbers'
 
-const FormWizard = () => {
+const TimeLine = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
@@ -26,4 +26,4 @@ const FormWizard = () => {
   )
 }
 
-export default FormWizard
+export default TimeLine
